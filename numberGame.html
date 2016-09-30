@@ -12,10 +12,9 @@
     <h3> Welcome To The Game</h3>
       <div id="close">
         <input type='text' id="info" />
+        <!--<input type='button' value="Start" onclick="javascript: startSomething();">-->
         <br>
-        <input type='button' value="Start" onclick="javascript: startSomething();">
-        <br>
-        <input type='button' value="Continue" onclick="javascript: setButtonPressed();"></div>
+        <input type='button' value="Begin" onclick="javascript: setButtonPressed();"></div>
     </div>
  <style>
  
@@ -24,7 +23,7 @@
         font-size: 40px;
       }
      div #close {
-       background-color: #add8e6;
+       background-color:#37b7d2;
        border: none;
        color: black;
        padding: 15px , 32px;
@@ -32,7 +31,17 @@
        font-family: Sans-serif;
        font-size: 25px;
        border-radius: 10px;
+       padding-bottom:2px;
       }
+     #close input{
+       border:none;
+       padding:3px;
+       background-color:#add8e6;
+       border-radius:4px;
+       text-align:center;
+     }
+  
+     
     </style>
    
   <script>
@@ -58,9 +67,10 @@ function setButtonPressed() {
   var compGuess = Math.floor (Math.random() * 5 + 1);
    document.getElementById("comp").innerHTML = compGuess;
    if (userGuess == compGuess) {
+    prompt ("You win!")
     document.getElementById("results").innerHTML ="you win!"
    } else {
-  document.getElementById("results").innerHTML = "Nope, wrong guess. Press 'continue' to try again."
+    document.getElementById("results").innerHTML = "Nope, wrong guess. Press 'Begin' to try again."
   }
   }
 computerAnswer()
