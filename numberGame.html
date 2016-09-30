@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Number Generating Game!!</title>
+  </head>
+  <body>
+    <p id="user"></p>
+    <p id="comp"></p>
+    <p id="results"></p>
+    <p id="counter"></p>
+   <div>
+    <h3> Welcome To The Game</h3>
+      <div id="close">
+        <input type='text' id="info" />
+        <br>
+        <input type='button' value="Start" onclick="javascript: startSomething();">
+        <br>
+        <input type='button' value="Continue" onclick="javascript: setButtonPressed();"></div>
+    </div>
+ <style>
+ 
+      div {
+         text-align: center;
+        font-size: 40px;
+      }
+     div #close {
+       background-color: #add8e6;
+       border: none;
+       color: black;
+       padding: 15px , 32px;
+       text-decoration: none;
+       font-family: Sans-serif;
+       font-size: 25px;
+       border-radius: 10px;
+      }
+    </style>
+   
+  <script>
+var buttonpressed = false;
+function waitForIt() {
+  if (!buttonpressed ) {
+  setTimeout(waitForIt,2500);
+  } else {
+ document.getElementById('info').value='ok';
+  }
+}
+function startSomething() {
+ document.getElementById('info').value='';
+ waitForIt();
+ document.getElementById('info').value='Press Continue';
+}
+
+function setButtonPressed() {
+ if (buttonpressed = true) {
+   var userGuess = prompt ("Pick a number between 1 and 5")
+ document.getElementById("user").innerHTML = userGuess;
+  function computerAnswer () {
+  var compGuess = Math.floor (Math.random() * 5 + 1);
+   document.getElementById("comp").innerHTML = compGuess;
+   if (userGuess == compGuess) {
+    document.getElementById("results").innerHTML ="you win!"
+   } else {
+  document.getElementById("results").innerHTML = "Nope, wrong guess. Press 'continue' to try again."
+  }
+  }
+computerAnswer()
+ }
+}
+</script>
+</body>
+</html>
